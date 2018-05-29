@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <!-- <meta name="description" content="">
+    <meta name="keyword" content=""> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LNG</title>
+    <!-- start: Css -->
+    <link rel="stylesheet" type="text/css" href="asset/css/bootstrap.min.css">
+    <!-- plugins -->
+    <link rel="stylesheet" type="text/css" href="asset/css/plugins/font-awesome.min.css"/>
+    <link rel="stylesheet" type="text/css" href="asset/css/plugins/simple-line-icons.css"/>
+    <link rel="stylesheet" type="text/css" href="asset/css/plugins/animate.min.css"/>
+    <link rel="stylesheet" type="text/css" href="asset/css/plugins/fullcalendar.min.css"/>
+    <link href="asset/css/style.css" rel="stylesheet">
+    <link href="asset/css/custom.css" rel="stylesheet">
+    <!-- end: Css -->
+    <link rel="shortcut icon" href="asset/img/ihdu-icon.png">
+  </head>
+  <body>
+    <!-- start: Header -->
+    <nav class="navbar navbar-default header navbar-fixed-top">
+      <div class="col-md-12 nav-wrapper">
+        <div class="navbar-header" style="width:100%;">
+          <div class="opener-left-menu is-open">
+            <span class="top"></span>
+            <span class="middle"></span>
+            <span class="bottom"></span>
+          </div>
+          <a class="navbar-brand z-page0">
+            <span class="fa fa-building"></span>
+            <b>用户企业服务平台</b>
+          </a>
+          <ul class="nav navbar-nav navbar-right user-nav">
+            <li class="user-name z-navuser"><span>Admin</span></li>
+            <li class="dropdown avatar-dropdown">
+              <img src="images/default.jpg" class="img-circle avatar" alt="user name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"/>
+              <ul class="dropdown-menu user-dropdown">
+                <li><a class="z-page3"><span class="fa fa-user"></span> 账号信息 </a></li>
+                <li><a class="z-page4"><span class="fa fa-calendar"></span> 修改密码</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="more">
+                  <ul>
+                    <li><a href=""><span class="fa fa-cogs"></span></a></li>
+                    <li><a href=""><span class="fa fa-lock"></span></a></li>
+                    <li><a href="login.html"><span class="fa fa-power-off "></span></a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- end: Header -->
+    <div class="container-fluid mimin-wrapper m-storage">
+      <!-- start:Left Menu -->
+      <div id="left-menu">
+        <div class="sub-left-menu scroll">
+          <ul class="nav nav-list">
+            <li><div class="left-bg"></div></li>
+            <li class="time">
+              <h1 class="animated fadeInLeft">21:00</h1>
+              <p class="animated fadeInRight">Sat,October 1st 2029</p>
+            </li>
+            <li><a class="z-page0"><span class="fa fa-hourglass-half"></span> 仓储</a></li>
+            <li class="ripple">
+              <a class="tree-toggle nav-header">
+                <span class="fa fa-ticket"></span> 订单中心
+                <span class="fa-angle-right fa right-arrow text-right"></span>
+              </a>
+              <ul class="nav nav-list tree">
+                <li><a class="z-page1"><span class="fa fa-shopping-cart"></span> 所有订单</a></li>
+                <li><a class="z-page2"><span class="fa fa-pencil-square"></span> 新增订单</a></li>
+              </ul>
+            </li>
+            <li class="ripple">
+              <a class="tree-toggle nav-header">
+                <span class="fa fa-user"></span> 企业账号
+                <span class="fa-angle-right fa right-arrow text-right"></span>
+              </a>
+              <ul class="nav nav-list tree">
+                <li><a class="z-page3"><span class="fa fa-info-circle"></span>账号信息</a></li>
+                <li><a class="z-page4"><span class="fa fa-lock"></span> 修改密码</a></li>
+              </ul>
+            </li>
+            <li><a href="credits.html"><span class="fa fa-book"></span> 相关支持</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- end: Left Menu -->
+      <!-- start: content -->
+      <div id="content">
+        <div class="panel">
+          <div class="panel-body">
+            <div class="col-md-12 col-sm-12">
+              <h3 class="animated fadeInLeft z-ctuser">你好，Admin</h3>
+              <p class="animated fadeInDown"><span class="fa  fa-map-marker"></span> 浙江,杭州</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 padding-0">
+          <div class="col-md-12">
+            <div class="panel chart-title">
+              <h3><span class="fa fa-area-chart"></span> 仓储</h3>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="panel">
+              <div class="panel-heading panel-heading-white  text-center">
+                <h4>图表1</h4>
+              </div>
+              <div class="panel-body">
+                <div id="doughnut-chart" style="height:200px;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="panel">
+              <div class="panel-heading panel-heading-white text-center">
+                <h4>图表2</h4>
+              </div>
+              <div class="panel-body">
+                <div id="pie-chart" style="height:200px;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="panel" style="padding:20px;">
+              <div class="panel-heading panel-heading-white">
+                <h4>图表3</h4>
+              </div>
+              <div class="panel-body" style="padding-bottom:0px;">
+                <div id="rectangular-chart" style="height:200px;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="panel" style="padding-left:20px;padding-right:20px;">
+            <div class="panel-heading panel-heading-white">
+              <h4>图表4</h4>
+            </div>
+            <div class="panel-body">
+              <div id="line-chart" style="height:300px;"></div>
+            </div>
+          </div>
+          <div class="panel" style="padding:20px;">
+            <div class="panel-heading panel-heading-white">
+              <h4>图表5</h4>
+            </div>
+            <div class="panel-body" style="padding-bottom:0px;">
+              <div id="bar-chart" style="height:200px;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end: content -->
+    </div>
+    <!-- 模态框（Modal） -->
+    <div class="modal fade f-mid" id="company_tip" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            信息修改是否成功
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">确定
+            </button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal -->
+    </div>
+    <!-- end: content -->
+    <!-- start: Javascript -->
+    <script src="asset/js/jquery.min.js"></script>
+    <script src="asset/js/jquery.ui.min.js"></script>
+    <script src="asset/js/bootstrap.min.js"></script>
+    <!-- plugins -->
+    <script src="asset/js/plugins/moment.min.js"></script>
+    <script src="asset/js/plugins/jquery.cookie.js"></script>
+    <script src="asset/js/plugins/flot/jquery.flot.min.js"></script>
+    <script src="asset/js/plugins/flot/jquery.flot.pie.min.js"></script>
+    <script src="asset/js/plugins/flot/jquery.flot.time.min.js"></script>
+    <script src="asset/js/plugins/flot/jquery.flot.navigate.min.js"></script>
+    <script src="asset/js/plugins/flot/jquery.flot.stack.min.js"></script>
+    <script src="asset/js/plugins/jquery.nicescroll.js"></script>
+    <!-- custom -->
+    <script src="asset/js/main.js"></script>
+    <script src="asset/js/company.js"></script>
+    
+    <script type="text/javascript">
+    lineChart();
+    pieChart();
+    rectangularChart();
+    doughnutChart();
+    stackChart();
+    // multiAxesChart();
+    function lineChart(){
+    var dataLine = [
+    {label: '&nbsp Trafic', color:'#58B2F4', data: [[1,25], [2,22], [3,25], [4,30], [5,20]]},
+    {label: '&nbsp User', color:'#8C54CA', data: [[1,10], [2,14], [3,20], [4,25], [5,40]]}
+    ];
+    var optionsLine = {
+    grid: {
+    borderWidth: 0
+    }
+    };
+    $.plot("#line-chart",dataLine,optionsLine);
+    };
+    function pieChart(){
+    var dataPie = [
+    { label: "Alfa", color:'#8C54CA', data: 210},
+    { label: "Beta", color:'#58B2F4', data: 50},
+    { label: "Gamma", color:'#BBE0E9', data: 150}
+    ];
+    $.plot('#pie-chart', dataPie, {
+    series: {
+    pie: {
+    show: true
+    }
+    },
+    legend: {
+    show: false
+    }
+    });
+    };
+    function rectangularChart(){
+    var dataPie = [
+    { label: "Alfa", color:'#15BA67', data: 50},
+    { label: "Beta", color:'#58B2F4', data: 70},
+    { label: "Beta", color:'#108BE5', data: 50},
+    { label: "Gamma", color:'#8C54CA', data: 190}
+    ];
+    $.plot('#rectangular-chart', dataPie, {
+    series: {
+    pie: {
+    show: true,
+    radius: 500,
+    label: {
+    show: true,
+    formatter: labelFormatter,
+    threshold: 0.1
+    }
+    }
+    },
+    legend: {
+    show: false
+    }
+    });
+    function labelFormatter(label, series) {
+    return "<div style='font-size:8pt; text-align:center; padding:2px; color:white;'>" + label + "<br/>" + Math.round(series.percent) + "%</div>";
+    }
+    };
+    function doughnutChart(){
+    var dataPie = [
+    { label: "Alfa", color:'#8C54CA', data: 100},
+    { label: "Beta", color:'#58B2F4', data: 70},
+    { label: "Gamma", color:'#BBE0E9', data: 190}
+    ];
+    $.plot('#doughnut-chart', dataPie, {
+    series: {
+    pie: {
+    show: true,
+    innerRadius: 0.5,
+    }
+    },
+    legend: {
+    show: false
+    }
+    });
+    };
+    function stackChart(){
+    var d1_1 = [
+    [1325376000000, 120],
+    [1328054400000, 70],
+    [1330560000000, 100],
+    [1333238400000, 60],
+    [1335830400000, 35]
+    ];
+    
+    var d1_2 = [
+    [1325376000000, 80],
+    [1328054400000, 60],
+    [1330560000000, 30],
+    [1333238400000, 35],
+    [1335830400000, 30]
+    ];
+    
+    var d1_3 = [
+    [1325376000000, 80],
+    [1328054400000, 40],
+    [1330560000000, 30],
+    [1333238400000, 20],
+    [1335830400000, 10]
+    ];
+    
+    var d1_4 = [
+    [1325376000000, 15],
+    [1328054400000, 10],
+    [1330560000000, 15],
+    [1333238400000, 20],
+    [1335830400000, 15]
+    ];
+    
+    var data1 = [
+    {
+    label: "Product 1",
+    data: d1_1,
+    bars: {
+    show: true,
+    barWidth: 12*24*60*60*1000,
+    fill: true,
+    lineWidth: 1,
+    order: 1,
+    fillColor:  "#BBE0E9"
+    },
+    color: "#BBE0E9"
+    },
+    {
+    label: "Product 2",
+    data: d1_2,
+    bars: {
+    show: true,
+    barWidth: 12*24*60*60*790,
+    fill: true,
+    lineWidth: 1,
+    order: 2,
+    fillColor:  "#58B2F4"
+    },
+    color: "#58B2F4"
+    },
+    {
+    label: "Product 3",
+    data: d1_3,
+    bars: {
+    show: true,
+    barWidth: 12*24*60*60*500,
+    fill: true,
+    lineWidth: 1,
+    order: 3,
+    fillColor:  "#8C54CA"
+    },
+    color: "#8C54CA"
+    },
+    {
+    label: "Product 4",
+    data: d1_4,
+    bars: {
+    show: true,
+    barWidth: 12*24*60*60*300,
+    fill: true,
+    lineWidth: 1,
+    order: 4,
+    fillColor:  "#444"
+    },
+    color: "#444"
+    }
+    ];
+    
+    $.plot($("#bar-chart"), data1, {
+    xaxis: {
+    min: (new Date(2011, 11, 15)).getTime(),
+    max: (new Date(2012, 04, 18)).getTime(),
+    mode: "time",
+    timeformat: "%b",
+    tickSize: [1, "month"],
+    monthNames: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    tickLength: 0, // hide gridlines
+    axisLabel: 'Month',
+    axisLabelUseCanvas: true,
+    axisLabelFontSizePixels: 18,
+    axisLabelFontFamily: 'Verdana, Arial, Helvetica, Tahoma, sans-serif',
+    axisLabelPadding: 5
+    },
+    yaxis: {
+    axisLabel: 'Value',
+    axisLabelUseCanvas: true,
+    axisLabelFontSizePixels: 12,
+    axisLabelFontFamily: 'Verdana, Arial, Helvetica, Tahoma, sans-serif',
+    axisLabelPadding: 5
+    },
+    grid: {
+    hoverable: true,
+    clickable: false,
+    borderWidth: 1
+    },
+    legend: {
+    labelBoxBorderColor: "none",
+    position: "left"
+    },
+    series: {
+    shadowSize: 1
+    },
+    grid:{
+    borderWidth:0
+    }
+    });
+    
+    function showTooltip(x, y, contents, z) {
+    $('<div id="flot-tooltip">' + contents + '</div>').css({
+    top: y - 20,
+    left: x - 90,
+    'border-color': z,
+    'position' :'absolute',
+    'background-color' : '#fff',
+    'border':'1px solid #f4f4f4',
+    'padding':'10px'
+    }).appendTo("body").show();
+    }
+    
+    function getMonthName(newTimestamp) {
+    var d = new Date(newTimestamp);
+    
+    var numericMonth = d.getMonth();
+    var monthArray = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    
+    var alphaMonth = monthArray[numericMonth];
+    
+    return alphaMonth;
+    }
+    
+    $("#bar-chart").bind("plothover", function (event, pos, item) {
+    
+    if (item) {
+    if (previousPoint != item.datapoint) {
+    previousPoint = item.datapoint;
+    $("#flot-tooltip").remove();
+    
+    var originalPoint;
+    
+    if (item.datapoint[0] == item.series.data[0][3]) {
+    originalPoint = item.series.data[0][0];
+    } else if (item.datapoint[0] == item.series.data[1][3]){
+    originalPoint = item.series.data[1][0];
+    } else if (item.datapoint[0] == item.series.data[2][3]){
+    originalPoint = item.series.data[2][0];
+    } else if (item.datapoint[0] == item.series.data[3][3]){
+    originalPoint = item.series.data[3][0];
+    } else if (item.datapoint[0] == item.series.data[4][3]){
+    originalPoint = item.series.data[4][0];
+    }
+    
+    var x = getMonthName(originalPoint);
+    y = item.datapoint[1];
+    z = item.series.color;
+    
+    showTooltip(item.pageX, item.pageY,
+    "<b>" + item.series.label + "</b><br /> " + y + "&deg;C",
+    z);
+    }
+    } else {
+    $("#flot-tooltip").remove();
+    previousPoint = null;
+    }
+    });
+    };
+    </script>
+    <!-- end: Javascript -->
+  </body>
+</html>

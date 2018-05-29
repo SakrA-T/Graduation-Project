@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <!-- <meta name="description" content="">
+  <meta name="keyword" content=""> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LNG</title>
+  <!-- start: Css -->
+  <link rel="stylesheet" type="text/css" href="asset/css/bootstrap.min.css">
+  <!-- plugins -->
+  <link rel="stylesheet" type="text/css" href="asset/css/plugins/font-awesome.min.css"/>
+  <!-- <link rel="stylesheet" type="text/css" href="asset/css/plugins/simple-line-icons.css"/> -->
+  <link rel="stylesheet" type="text/css" href="asset/css/plugins/datatables.bootstrap.min.css"/>
+  <link rel="stylesheet" type="text/css" href="asset/css/plugins/animate.min.css"/>
+  <link rel="stylesheet" type="text/css" href="asset/css/plugins/spinkit.css"/>
+  <link href="asset/css/style.css" rel="stylesheet">
+  <link href="asset/css/custom.css" rel="stylesheet">
+  <!-- end: Css -->
+  <link rel="shortcut icon" href="asset/img/ihdu-icon.png">
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<!--2018.5.8 modify <body id="mimin" class="dashboard"> -->
+<body>
+  <!-- start: Header -->
+  <nav class="navbar navbar-default header navbar-fixed-top">
+    <div class="col-md-12 nav-wrapper">
+      <div class="navbar-header" style="width:100%;">
+        <div class="opener-left-menu is-open">
+          <span class="top"></span>
+          <span class="middle"></span>
+          <span class="bottom"></span>
+        </div>
+        <a class="navbar-brand z-page0">
+          <span class="fa fa-truck"></span>
+          <b>配送服务平台</b>
+        </a>
+        <ul class="nav navbar-nav navbar-right user-nav">
+          <li class="user-name  z-navuser"><span>Admin2</span></li>
+          <li class="dropdown avatar-dropdown">
+            <img src="images/default2.png" class="img-circle avatar" alt="user name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"/>
+            <ul class="dropdown-menu user-dropdown">
+              <li><a class="z-page2"><span class="fa fa-user"></span> 账号信息 </a></li>
+              <li><a class="z-page3"><span class="fa fa-calendar"></span> 修改密码</a></li>
+              <li role="separator" class="divider"></li>
+              <li class="more">
+                <ul>
+                  <li><a href=""><span class="fa fa-cogs"></span></a></li>
+                  <li><a href=""><span class="fa fa-lock"></span></a></li>
+                  <li><a href="login.html"><span class="fa fa-power-off "></span></a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- end: Header -->
+  <div class="container-fluid mimin-wrapper g-orderdetail" data-identity="2">
+    <!-- start:Left Menu -->
+    <div id="left-menu">
+      <div class="sub-left-menu scroll">
+        <ul class="nav nav-list">
+          <li><div class="left-bg"></div></li>
+          <li class="time">
+            <h1 class="animated fadeInLeft">21:00</h1>
+            <p class="animated fadeInRight">Sat,October 1st 2029</p>
+          </li>
+          <li><a class="z-page0"><span class="fa fa-home"></span> 首页 </a></li>
+          <li><a class="z-page1"><span class="fa fa-ticket"></span> 订单中心 </a></li>
+          <li class="ripple">
+            <a class="tree-toggle nav-header">
+              <span class="fa fa-user"></span> 个人账号
+              <span class="fa-angle-right fa right-arrow text-right"></span>
+            </a>
+            <ul class="nav nav-list tree">
+              <li><a class="z-page2"><span class="fa fa-info-circle"></span>账号信息</a></li>
+              <li><a class="z-page3"><span class="fa fa-lock"></span> 修改密码</a></li>
+            </ul>
+          </li>
+          <li><a href="credits.html"><span class="fa fa-book"></span> 相关支持</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- end: Left Menu -->
+    <!-- start: Content -->
+    <div id="content">
+      <div class="panel box-shadow-none content-header">
+        <div class="panel-body">
+          <div class="col-md-12">
+            <h3 class="animated fadeInLeft"><span class="fa fa-map"></span> 订单详情</h3>
+            <p class="animated fadeInDown">
+              订单中心 <span class="fa-angle-right fa"></span> 订单详情
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="panel">
+          <div class="panel-heading">
+            <h4 class="h-orderid">订单号：</h4>
+          </div>
+          <div class="panel-body">
+            <div class="card wizard-card" data-color="green" id="wizard">
+              <div class="wizard-navigation">
+                <div class="progress-with-circle">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="5" style="width: 15%;"></div>
+                </div>
+                <ul id="s_statusnav">
+                  <li>
+                    <a href="" data-toggle="tab">
+                      <div class="icon-circle">
+                        <i class="fa fa-shopping-cart"></i>
+                      </div>
+                      新订单
+                    </a>
+                  </li>
+                  <li>
+                    <a href="" data-toggle="tab">
+                      <div class="icon-circle">
+                        <i class="fa fa-flag"></i>
+                      </div>
+                      待配送
+                    </a>
+                  </li>
+                  <li>
+                    <a href="" data-toggle="tab">
+                      <div class="icon-circle">
+                        <i class="fa fa-truck"></i>
+                      </div>
+                      配送中
+                    </a>
+                  </li>
+                  <li>
+                    <a href="" data-toggle="tab">
+                      <div class="icon-circle">
+                        <i class="fa fa-star-half-o"></i>
+                      </div>
+                      待签收
+                    </a>
+                  </li>
+                  <li>
+                    <a href="" data-toggle="tab">
+                      <div class="icon-circle">
+                        <i class="fa fa-check"></i>
+                      </div>
+                      已完成
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-8 col-md-offset-2 m-orderdetail">
+              <form class="form-horizontal" id="detailForm" role="form">
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">产品名称：</label>
+                  <div class="col-sm-9">
+                    <p class="form-control-static d-produce">LNG1号液</p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">产品数量：</label>
+                  <div class="col-sm-2">
+                    <p class="form-control-static d-count">1000L</p>
+                  </div>
+                  <label class="col-sm-3 control-label d-difflabel">xxxxxx：</label>
+                  <div class="col-sm-2">
+                    <p class="form-control-static d-diffbox" style="color:#F63B3B;">￥ 3750</p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">下单时间：</label>
+                  <div class="col-sm-5">
+                    <p class="form-control-static d-orderDate">2018/05/11 15:27</p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">完成时间：</label>
+                  <div class="col-sm-5">
+                    <p class="form-control-static d-finishDate">（未完成）</p>
+                  </div>
+                </div>
+                <hr>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">收货人：</label>
+                  <div class="col-sm-4">
+                    <p class="form-control-static d-name">小明</p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">联系方式：</label>
+                  <div class="col-sm-4">
+                    <p class="form-control-static d-tel">15958665723</p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">收货地址：</label>
+                  <div class="col-sm-9">
+                    <p class="form-control-static d-address">浙江省杭州市江干区</p>
+                  </div>
+                </div>
+                <hr>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">配送员：</label>
+                  <div class="col-sm-4">
+                    <p class="form-control-static d-staffName">小张</p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">联系方式：</label>
+                  <div class="col-sm-4">
+                    <p class="form-control-static d-staffTel">18768785534</p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">车牌号：</label>
+                  <div class="col-sm-4">
+                    <p class="form-control-static d-truck">浙A87654</p>
+                  </div>
+                </div>
+                <hr>
+                <div class="form-group d-btnbox">
+                  <!-- <div class=""> -->
+                  <button class="btn btn-round btn-danger hide" id="s_cancel" type="button">
+                  取消 <span class="fa fa-trash"></span>
+                  </button>
+                  <button class="btn btn-round btn-default hide" id="s_finish" type="button">
+                  签收 <span class="fa fa-check"></span>
+                  </button>
+                  <button class="btn btn-round btn-info hide" id="s_ordertake" type="button">
+                  接单 <span class="fa fa-calendar-plus-o"></span>
+                  </button>
+                  <button class="btn btn-round btn-info hide" id="s_delivery" type="button">
+                  配送订单 <span class="fa fa-truck"></span>
+                  </button>
+                  <button class="btn btn-round btn-primary hide" id="s_delivered" type="button">
+                  已送达 <span class="fa fa-star-half-o"></span>
+                  </button>
+                  <button class="btn btn-round btn-default" id="s_back" type="button">
+                  返回 <span class="fa fa-reply"></span>
+                  </button>
+                  <!-- </div> -->
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- end: m-ordertable -->
+        <!-- <div class="col-md-2"><h4>新增订单</h4></div> -->
+      </div>
+      <!-- </div> -->
+    </div>
+    <!-- end: content -->
+  </div>
+  <!-- 模态框（Modal） -->
+  <div class="modal fade f-mid" id="orderdetail_tip" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          信息获取是否成功
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">确定
+          </button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+  </div>
+  <!-- start: Javascript -->
+  <script src="asset/js/jquery.min.js"></script>
+  <script src="asset/js/jquery.ui.min.js"></script>
+  <script src="asset/js/bootstrap.min.js"></script>
+  <!-- plugins -->
+  <script src="asset/js/plugins/moment.min.js"></script>
+  <script src="asset/js/plugins/jquery.cookie.js"></script>
+  <script src="asset/js/plugins/jquery.nicescroll.js"></script>
+  <script src="asset/js/plugins/jquery.validate.min.js"></script>
+  <script src="asset/js/plugins/jquery.bootstrap.wizard.js"></script>
+  <!-- custom -->
+  <script src="asset/js/main.js"></script>
+  <script src="asset/js/statuschange.js"></script>
+  <script src="asset/js/orderdetail.js"></script>
+  <!-- end: Javascript -->
+</body>
+</html>

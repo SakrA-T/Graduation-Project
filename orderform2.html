@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <!-- <meta name="description" content="">
+    <meta name="keyword" content=""> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LNG</title>
+    <!-- start: Css -->
+    <link rel="stylesheet" type="text/css" href="asset/css/bootstrap.min.css">
+    <!-- plugins -->
+    <link rel="stylesheet" type="text/css" href="asset/css/plugins/font-awesome.min.css"/>
+    <link rel="stylesheet" type="text/css" href="asset/css/plugins/datatables.bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="asset/css/plugins/animate.min.css"/>
+    <link rel="stylesheet" type="text/css" href="asset/css/plugins/spinkit.css"/>
+    <link href="asset/css/style.css" rel="stylesheet">
+    <link href="asset/css/custom.css" rel="stylesheet">
+    <!-- end: Css -->
+    <link rel="shortcut icon" href="asset/img/ihdu-icon.png">
+  </head>
+  <!--2018.5.8 modify <body id="mimin" class="dashboard"> -->
+  <body>
+    <!-- start: Header -->
+    <nav class="navbar navbar-default header navbar-fixed-top">
+      <div class="col-md-12 nav-wrapper">
+        <div class="navbar-header" style="width:100%;">
+          <div class="opener-left-menu is-open">
+            <span class="top"></span>
+            <span class="middle"></span>
+            <span class="bottom"></span>
+          </div>
+          <a class="navbar-brand z-page0">
+            <span class="fa fa-truck"></span>
+            <b>配送服务平台</b>
+          </a>
+          <ul class="nav navbar-nav navbar-right user-nav">
+            <li class="user-name  z-navuser"><span>Admin2</span></li>
+            <li class="dropdown avatar-dropdown">
+              <img src="images/default2.png" class="img-circle avatar" alt="user name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"/>
+              <ul class="dropdown-menu user-dropdown">
+                <li><a class="z-page2"><span class="fa fa-user"></span> 账号信息 </a></li>
+                <li><a class="z-page3"><span class="fa fa-calendar"></span> 修改密码</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="more">
+                  <ul>
+                    <li><a href=""><span class="fa fa-cogs"></span></a></li>
+                    <li><a href=""><span class="fa fa-lock"></span></a></li>
+                    <li><a href="login.html"><span class="fa fa-power-off "></span></a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- end: Header -->
+    <div class="container-fluid mimin-wrapper g-orderform" data-identity="2">
+      <!-- start:Left Menu -->
+      <div id="left-menu">
+        <div class="sub-left-menu scroll">
+          <ul class="nav nav-list">
+            <li><div class="left-bg"></div></li>
+            <li class="time">
+              <h1 class="animated fadeInLeft">21:00</h1>
+              <p class="animated fadeInRight">Sat,October 1st 2029</p>
+            </li>
+            <li><a class="z-page0"><span class="fa fa-home"></span> 首页 </a></li>
+            <li><a class="z-page1"><span class="fa fa-ticket"></span> 订单中心 </a></li>
+            <li class="ripple">
+              <a class="tree-toggle nav-header">
+                <span class="fa fa-user"></span> 个人账号
+                <span class="fa-angle-right fa right-arrow text-right"></span>
+              </a>
+              <ul class="nav nav-list tree">
+                <li><a class="z-page2"><span class="fa fa-info-circle"></span>账号信息</a></li>
+                <li><a class="z-page3"><span class="fa fa-lock"></span> 修改密码</a></li>
+              </ul>
+            </li>
+            <li><a href="credits.html"><span class="fa fa-book"></span> 相关支持</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- end: Left Menu -->
+      <!-- start: Content -->
+      <div id="content">
+        <div class="panel box-shadow-none content-header">
+          <div class="panel-body">
+            <div class="col-md-12">
+              <h3 class="animated fadeInLeft"><span class="fa fa-ticket"></span> 订单中心</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="panel">
+            <div class="col-md-12 tabs-area m-ordertable">
+              <ul class="nav nav-tabs nav-tabs-v3" role="tablist">
+                <li role="presentation" class="active">
+                  <a href="#tabs-area1" id="tabs-1" role="tab" data-toggle="tab" aria-expanded="true"><span class="badge badge-info pull-right t-ocount">0</span>新订单</a>
+                </li>
+                <li role="presentation" class="">
+                  <a href="#tabs-area2" role="tab" id="tabs-2" data-toggle="tab" aria-expanded="false"><span class="badge badge-danger pull-right t-ocount">0</span>待配送</a>
+                </li>
+                <li role="presentation">
+                  <a href="#tabs-area3" id="tabs-3" role="tab" data-toggle="tab" aria-expanded="false"><span class="badge badge-warning pull-right t-ocount">0</span>配送中</a>
+                </li>
+                <li role="presentation" class="">
+                  <a href="#tabs-area4" role="tab" id="tabs-4" data-toggle="tab" aria-expanded="false"><span class="badge badge-primary pull-right t-ocount">0</span>待签收</a>
+                </li>
+                <li role="presentation" class="">
+                  <a href="#tabs-area5" role="tab" id="tabs-5" data-toggle="tab" aria-expanded="false"><span class="badge badge-success pull-right t-ocount">0</span>已完成</a>
+                </li>
+                <!-- <li role="presentation" class="">
+                  <a href="#tabs-area6" role="tab" id="tabs-6" data-toggle="tab" aria-expanded="false"><span class="badge pull-right">2</span>已拒单</a>
+                </li> -->
+              </ul>
+              <div class="panel-body">
+                <div class="col-md-4 col-md-offset-4">
+                  <div class="sk-circle o-loading">
+                    <div class="sk-circle1 sk-child"></div>
+                    <div class="sk-circle2 sk-child"></div>
+                    <div class="sk-circle3 sk-child"></div>
+                    <div class="sk-circle4 sk-child"></div>
+                    <div class="sk-circle5 sk-child"></div>
+                    <div class="sk-circle6 sk-child"></div>
+                    <div class="sk-circle7 sk-child"></div>
+                    <div class="sk-circle8 sk-child"></div>
+                    <div class="sk-circle9 sk-child"></div>
+                    <div class="sk-circle10 sk-child"></div>
+                    <div class="sk-circle11 sk-child"></div>
+                    <div class="sk-circle12 sk-child"></div>
+                  </div>
+                  <div class="o-nolist hide">
+                    <p>暂无此类订单</p>
+                  </div>
+                </div>
+                <!-- <div class="col-md-4 col-md-offset-4">
+                  
+                </div> -->
+                <div class="responsive-table o-list hide">
+                  <div class="tab-content tab-content-v3">
+                    <div role="tabpanel" class="tab-pane fade active in" id="tabs-area1" aria-labelledby="tabs-area1">
+                      <table class="table table-striped table-bordered order-datatables" width="100%" cellspacing="0">
+                        <thead>
+                          <tr>
+                            <th>订单号</th>
+                            <th>公司名称</th>
+                            <th>收货地址</th>
+                            <th>收货人</th>
+                            <th>联系方式</th>
+                            <th>下单日期</th>
+                            <th>完成日期</th>
+                            <th>授权码</th>
+                          </tr>
+                        </thead>
+                        <!-- 新订单 -->
+                        <tbody class="t-orderlist" data-status="0">
+                          <tr>
+                            <td id="t_id">2018051200001</td>
+                            <td id="t_company">浙江省杭州市拱墅区</td>
+                            <td id="t_addr">-</td>
+                            <td id="t_name">-</td>
+                            <td id="t_tel">-</td>
+                            <td id="t_orderdate">2018/05/12</td>
+                            <td id="t_finishdate">-</td>
+                            <td id="t_license">$800</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="tabs-area2" aria-labelledby="tabs-area2">
+                      <table class="table table-striped table-bordered order-datatables" width="100%" cellspacing="0">
+                        <thead>
+                          <tr>
+                            <th>订单号</th>
+                            <th>公司名称</th>
+                            <th>收货地址</th>
+                            <th>收货人</th>
+                            <th>联系方式</th>
+                            <th>下单日期</th>
+                            <th>完成日期</th>
+                            <th>授权码</th>
+                          </tr>
+                        </thead>
+                        <!-- 待配送 -->
+                        <tbody class="t-orderlist" data-status="1">
+                          <tr>
+                            <td>2018051200001</td>
+                            <td>浙江省杭州市拱墅区</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>2018/05/12</td>
+                            <td>-</td>
+                            <td>$800</td>
+                            <td>待配送</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="tabs-area3" aria-labelledby="tabs-area3">
+                      <table class="table table-striped table-bordered order-datatables" width="100%" cellspacing="0">
+                        <thead>
+                          <tr>
+                            <th>订单号</th>
+                            <th>公司名称</th>
+                            <th>收货地址</th>
+                            <th>收货人</th>
+                            <th>联系方式</th>
+                            <th>下单日期</th>
+                            <th>完成日期</th>
+                            <th>授权码</th>
+                          </tr>
+                        </thead>
+                        <!-- 配送中 -->
+                        <tbody class="t-orderlist" data-status="2">
+                          <tr>
+                            <td>201805110012</td>
+                            <td>浙江纺织企业有限公司</td>
+                            <td>浙江省杭州市富阳市</td>
+                            <td>李xx</td>
+                            <td>15745613411</td>
+                            <td>2018/05/11</td>
+                            <td>-</td>
+                            <td>$3,100</td>
+                            <td>配送中</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="tabs-area4" aria-labelledby="tabs-area4">
+                      <table class="table table-striped table-bordered order-datatables" width="100%" cellspacing="0">
+                        <thead>
+                          <tr>
+                            <th>订单号</th>
+                            <th>公司名称</th>
+                            <th>收货地址</th>
+                            <th>收货人</th>
+                            <th>联系方式</th>
+                            <th>下单日期</th>
+                            <th>完成日期</th>
+                            <th>授权码</th>
+                          </tr>
+                        </thead>
+                        <!-- 待签收 -->
+                        <tbody class="t-orderlist" data-status="3">
+                          <tr>
+                            <td>201805100024</td>
+                            <td>浙江纺织企业有限公司</td>
+                            <td>浙江省杭州市江干区</td>
+                            <td>王xx</td>
+                            <td>15755513789</td>
+                            <td>2018/05/10</td>
+                            <td>-</td>
+                            <td>$5,050</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="tabs-area5" aria-labelledby="tabs-area5">
+                      <table class="table table-striped table-bordered order-datatables" width="100%" cellspacing="0">
+                        <thead>
+                          <tr>
+                            <th>订单号</th>
+                            <th>公司名称</th>
+                            <th>收货地址</th>
+                            <th>收货人</th>
+                            <th>联系方式</th>
+                            <th>下单日期</th>
+                            <th>完成日期</th>
+                            <th>授权码</th>
+                          </tr>
+                        </thead>
+                        <!-- 已完成 -->
+                        <tbody class="t-orderlist" data-status="4">
+                          <tr>
+                            <td>201801010012</td>
+                            <td>浙江纺织企业有限公司</td>
+                            <td>浙江省宁波市</td>
+                            <td>张xx</td>
+                            <td>18745613411</td>
+                            <td>2011/07/25</td>
+                            <td>2011/07/26</td>
+                            <td>$170,750</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="col-md-2"><h4>新增订单</h4></div> -->
+          </div>
+        </div>
+      </div>
+      <!-- end: content -->
+    </div>
+    <!-- 模态框（Modal） -->
+    <div class="modal fade f-mid" id="orderform_tip" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            信息获取是否成功
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">确定
+            </button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal -->
+    </div>
+    <!-- start: Javascript -->
+    <script src="asset/js/jquery.min.js"></script>
+    <script src="asset/js/jquery.ui.min.js"></script>
+    <script src="asset/js/bootstrap.min.js"></script>
+    <!-- plugins -->
+    <script src="asset/js/plugins/moment.min.js"></script>
+    <script src="asset/js/plugins/jquery.cookie.js"></script>
+    <script src="asset/js/plugins/jquery.datatables.min.js"></script>
+    <script src="asset/js/plugins/datatables.bootstrap.min.js"></script>
+    <script src="asset/js/plugins/jquery.nicescroll.js"></script>
+    <!-- custom -->
+    <script src="asset/js/main.js"></script>
+    <script src="asset/js/order.js"></script>
+
+    <!-- end: Javascript -->
+  </body>
+</html>
