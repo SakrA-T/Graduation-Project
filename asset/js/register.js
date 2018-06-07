@@ -74,7 +74,7 @@ $(document).ready(function() {
         },
         messages: {
             username: {
-                required: "请输入用户名,由字母数字组成"
+                required: "请输入用户名,由字母数字或下划线组成"
             },
             r_select: {
                 required: "请选择注册身份"
@@ -135,9 +135,12 @@ $(document).ready(function() {
                             tipstate(true);
                             // regbtn.removeClass('disabled');
                             regbtn.removeAttr('disabled');
-                            setTimeout(function() {
-                                location.href = "login.html";
-                            }, 1000);
+                            // setTimeout(function() {
+                            //     location.href = "login.html";
+                            // }, 1000);
+                            tipbox.on('hidden.bs.modal', function () {
+							  location.href = "login.html";
+							})
                             break;
                         case "0": //用户名or手机号已被注册
                             tiptext.text(msg);

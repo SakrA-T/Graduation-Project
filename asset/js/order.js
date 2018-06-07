@@ -46,9 +46,9 @@ $(document).ready(function() {
         } else {
             tiptext.text('请先登录！');
             tipstate(true);
-            setTimeout(function() {
-                location.href = "login.html";
-            }, 1000);
+            tipbox.on('hidden.bs.modal', function () {
+              location.href = "login.html";
+            })
         }
     }
     $('.z-page0').click(function(event) {
@@ -81,20 +81,24 @@ $(document).ready(function() {
                 function(data, textStatus, xhr) {
                     // ctusbox.text("欢迎，" + JSON.parse(data).user);
                     if (JSON.parse(data).code == 0) {
-                        alert(JSON.parse(data).msg);
-                        location.href = "login.html";
+                        tiptext.text('请先登录！');
+                        tipstate(true);
+                        tipbox.on('hidden.bs.modal', function () {
+                          location.href = "login.html";
+                        })
                     }
-                    if (JSON.parse(data).name == ' ' || JSON.parse(data).name == '-') {
+                    console.log(JSON.parse(data));
+                    if (JSON.parse(data).name == '' || JSON.parse(data).name == '-') {
                         tiptext.text('请先完善个人信息！');
                         tipstate(true);
                         if (useridentity=="1") {
-                            setTimeout(function() {
+                            tipbox.on('hidden.bs.modal', function () {
                                 changeAddr(3);
-                            }, 1000);
+                            })
                         }else{
-                            setTimeout(function() {
+                            tipbox.on('hidden.bs.modal', function () {
                                 changeAddr(2);
-                            }, 1000);
+                            })
                         }
                         return false;
                     }

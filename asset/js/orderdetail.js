@@ -306,13 +306,9 @@ $(document).ready(function() {
         $.post('php/changestatus.php', {
                 id: urlid,
                 orderid: orderid,
-                // status: status,
-                // staffname: staffname,
-                // stafftel: stafftel,
-                truck: truck,
+                status: status,
                 type: 3,
                 identity: useridentity
-
             }, 
             function(data, textStatus, xhr) {
                 var msg = JSON.parse(data).msg;

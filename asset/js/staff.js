@@ -134,12 +134,17 @@ $(document).ready(function() {
                         var msg = JSON.parse(data).msg;
                         switch (JSON.parse(data).code) {
                             case "1": //修改成功
+                                savebtn.removeAttr('disabled');
                                 tiptext.text(msg);
                                 tipstate(true);
-                                savebtn.removeAttr('disabled');
                                 setTimeout(function() {
                                     location.href = "staffinfo.html" + "?id=" + urlid;
                                 }, 1000);
+                                break;
+                            case "0": //用户名或手机号已被使用
+                                savebtn.removeAttr('disabled');
+                                tiptext.text(msg);
+                                tipstate(true);
                                 break;
                             case "-1": //连接数据库失败
                                 location.href = "500.html";

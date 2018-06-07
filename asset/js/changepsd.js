@@ -161,6 +161,13 @@ $(document).ready(function() {
                         case "1": //修改成功
                             tiptext.text(msg+'请重新登录！');
                             tipstate(true);
+                            $.post('php/set_cookie.php', {
+                                name: urlid,
+                                value: false
+                            }, function(data, textStatus, xhr) {
+                                if (data == "0")
+                                    alert("设置免登录时出现错误！请联系系统管理员修复！");
+                            });
                             setTimeout(function() {
                                 location.href = "login.html";
                             }, 1000);
@@ -366,9 +373,13 @@ $(document).ready(function() {
                         case "1": //修改成功
                             tiptext.text(msg+'请重新登录！');
                             tipstate(true);
-                            setTimeout(function() {
-                                location.href = "login.html";
-                            }, 1000);
+                            $.post('php/set_cookie.php', {
+                                name: urlid,
+                                value: false
+                            }, function(data, textStatus, xhr) {
+                                if (data == "0")
+                                    alert("设置免登录时出现错误！请联系系统管理员修复！");
+                            });
                             $("#staffpsdForm")[0].reset();
                             savespbtn.removeAttr('disabled');
                             break;

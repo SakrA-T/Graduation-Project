@@ -151,6 +151,11 @@ $(document).ready(function() {
                                 location.href = "companyinfo.html"+"?id="+urlid;
                             }, 1000);
                             break;
+                        case "0": //用户名或手机号已被使用
+                            savebtn.removeAttr('disabled');
+                            tiptext.text(msg);
+                            tipstate(true);
+                            break;
                         case "-1": //连接数据库失败
                         case "-2": //执行语句失败
                             tiptext.text(msg);

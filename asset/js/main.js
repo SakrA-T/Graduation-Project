@@ -338,14 +338,20 @@
 
     // Custom
     function getUrlParam(name) {
-        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
-        var r = window.location.search.substr(1).match(reg); //匹配目标参数
-        if (r != null) return unescape(r[2]);
-        return null; //返回参数值
+      var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+      var r = window.location.search.substr(1).match(reg); //匹配目标参数
+      if (r != null) return unescape(r[2]);
+      return null; //返回参数值
     }
     var logout = $(".logout"),
         urlid = getUrlParam("id") || "";
     logout.click(function(event) {
-      // $.cookie(urlid,null); 
+      $.post('php/set_cookie.php', {
+          name: urlid,
+          value: false
+      }, function(data, textStatus, xhr) {
+          if (data == "0")
+              alert("设置免登录时出现错误！请联系系统管理员修复！");
+      });
     });
 })(jQuery);

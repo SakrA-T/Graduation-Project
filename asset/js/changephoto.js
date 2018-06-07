@@ -92,7 +92,7 @@ var sendPhoto = function() {
             height: 300
         });
         if (result) {
-            var imgBase = result.toDataURL('image/jpeg');
+            var imgBase = result.toDataURL('image/jpg');
 
             $.post('php/setphoto.php', {
                     photo: imgBase,
@@ -107,29 +107,17 @@ var sendPhoto = function() {
                             }, 1000);
                             console.log(msg);
                             break;
-                            // case "0": //用户名or手机号已被注册
-                            //     // tiptext.text(msg);
-                            //     // tipstate(true);
-                            //     // savebtn.removeClass('disabled');
-                            //     savebtn.removeAttr('disabled');
-                            //     break;
                         case "-1": //连接数据库失败
                             alert(msg);
                             location.href = "500.html";
-                            // savebtn.removeClass('disabled');
-                            // savebtn.removeAttr('disabled');
                             break;
                         case "-2": //执行语句失败
                             alert(msg);
                             location.href = "500.html";
-                            // savebtn.removeClass('disabled');
-                            // savebtn.removeAttr('disabled');
                             break;
                         default:
                             alert("出现未知错误！请联系系统管理员修复！");
                             location.href = "500.html";
-                            // savebtn.removeClass('disabled');
-                            // savebtn.removeAttr('disabled');
                             break;
                     }
                 });

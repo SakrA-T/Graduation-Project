@@ -1,5 +1,5 @@
 <?php
-        header('Content-type:text/html;charset=utf-8');
+header('Content-type:text/html;charset=utf-8');
 $_id = $_POST['id'];
 // $_photo = $_POST['photo'];
 

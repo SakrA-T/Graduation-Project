@@ -45,9 +45,9 @@ $(document).ready(function() {
         } else {
             tiptext.text('请先登录！');
             tipstate(true);
-            setTimeout(function() {
-                location.href = "login.html";
-            }, 1000);
+            tipbox.on('hidden.bs.modal', function () {
+              location.href = "login.html";
+            })
         }
     }
     $('.z-page0').click(function(event) {
@@ -87,12 +87,12 @@ $(document).ready(function() {
                     identity: "1"
                 },
                 function(data, textStatus, xhr) {
-                    if (JSON.parse(data).name == ' ' || JSON.parse(data).name == '-') {
+                    if (JSON.parse(data).name == '' || JSON.parse(data).name == '-') {
                         tiptext.text('请先完善个人信息！');
                         tipstate(true);
-                        setTimeout(function() {
+                        tipbox.on('hidden.bs.modal', function () {
                             location.href = "companyinfo.html" + "?id=" + urlid;
-                        }, 1000);
+                        })
                         return false;
                     }
                     navusbox.text(JSON.parse(data).user);

@@ -16,7 +16,7 @@ $(document).ready(function() {
     $('#tipbox').on('hide.bs.modal', function() {
             lgbtn.removeAttr('disabled');
         })
-
+    console.log($.cookie());
     $("form").submit(function() {
 
         if($("#loginForm").valid()){
