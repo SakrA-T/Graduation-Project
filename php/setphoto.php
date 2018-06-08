@@ -31,7 +31,7 @@ if (preg_match('/^(data:\s*image\/(\w+);base64,)/', $base64_image_content, $resu
 		}else if($p->identity=='2'){
 			$target = "staffinfo";
 		}
-		$setphoto = "UPDATE $target SET photo='$img'";
+		$setphoto = "UPDATE $target SET photo='$img' WHERE id=$_id;";
 
         if (mysqli_query($link, $setphoto)) {
 		    mysqli_close($link);

@@ -15,7 +15,7 @@ $_id = sprintf("%06d", $_id);
 $link=mysqli_connect("localhost", "root", "937461995", "lng") or die("{\"code\":-1,\"msg\":\"连接数据库时出现错误！请联系系统管理员进行修复！\r\nerror code:".mysqli_connect_error()."\"}");
 
 // intval ($_id)
-$query="SELECT user,tel FROM companyinfo WHERE tel='" . $_tel . "'" . " or user='" . $_user . "'" . " union all SELECT user,tel FROM staffinfo WHERE tel='" . $_tel . "'" . " or user='" . $_user . "'";
+$query="SELECT user,tel FROM companyinfo WHERE (tel='" . $_tel . "'" . " or user='" . $_user . "'" . ") AND id!=$_id union all SELECT user,tel FROM staffinfo WHERE (tel='" . $_tel . "'" . " or user='" . $_user . "') AND id!=$_id";
 
 $result=mysqli_query($link, $query);
 $p=mysqli_fetch_object($result);

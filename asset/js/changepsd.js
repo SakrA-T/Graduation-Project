@@ -380,6 +380,9 @@ $(document).ready(function() {
                                 if (data == "0")
                                     alert("设置免登录时出现错误！请联系系统管理员修复！");
                             });
+                            setTimeout(function() {
+                                location.href = "login.html";
+                            }, 1000);
                             $("#staffpsdForm")[0].reset();
                             savespbtn.removeAttr('disabled');
                             break;
